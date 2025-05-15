@@ -1,1 +1,9 @@
-# Add code here
+version: '3'
+
+services:
+  nodeserver:
+    image: nodeapp
+    ports:
+      - 4567:4567
+    restart: always
+    network_mode: host
