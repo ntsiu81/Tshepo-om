@@ -1,0 +1,23 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: scaffold-template
+  title: Example Scaffold Template
+  description: An example template that uses a custom action
+spec:
+  owner: user:guest
+  type: service
+  parameters:
+    - title: Provide some simple information
+      required:
+        - name
+      properties:
+        name:
+          title: Name
+          type: string
+          description: Unique name of the component
+  steps:
+    - id: create-custom-file
+      name: Create Custom File
+      action: my:custom:action
+      input: {}
